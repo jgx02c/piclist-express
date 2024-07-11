@@ -1,1 +1,30 @@
-{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/api" }] }
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/processPhoto",
+        "methods": ["POST"],
+        "dest": "/server.js"
+      },
+      {
+        "src": "/api/documentation",
+        "methods": ["GET"],
+        "dest": "/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/server.js"
+      }
+    ],
+    "env": {
+      "SERPAPI_API_KEY": "@serpapi_api_key",
+      "OPENAI_API_KEY": "@openai_api_key"
+    }
+  }
+  
