@@ -21,9 +21,5 @@
       "src": "/(.*)",
       "dest": "/server.js"
     }
-  ],
-  "env": {
-    "SERPAPI_API_KEY": "@serpapi_api_key",
-    "OPENAI_API_KEY": "@openai_api_key"
-  }
+  ]
 }
